@@ -1,0 +1,24 @@
+# ===== Backend =====
+backend/target/
+backend/*.log
+backend/.mvn/wrapper/maven-wrapper.jar
+
+# ===== Frontend =====
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+
+# ===== IDEs =====
+.idea/
+.vscode/
+*.iml
+*.swp
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== Env =====
+.env
+.env.local
+*.env

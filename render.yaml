@@ -1,0 +1,31 @@
+# render.yaml
+# Este archivo configura el despliegue en Render.com
+# Colócalo en la RAÍZ del repo o en la raíz del backend
+
+services:
+  - type: web
+    name: mini-inventario-api
+    runtime: docker
+    dockerfilePath: backend/Dockerfile
+    dockerContext: backend
+    plan: free            # Cambia a "starter" o "standard" en producción
+    healthCheckPath: /actuator/health   # opcional si no tienes actuator
+    envVars:
+      # ─── OBLIGATORIAS (configurar en el dashboard de Render) ───
+      - key: DATABASE_URL
+        sync: false       # Se setea manualmente en Render, no en este archivo
+      - key: DATABASE_USERNAME
+        sync: false
+      - key: DATABASE_PASSWORD
+        sync: false
+      # ─── OPCIONALES ─────────────────────────────────────────────
+      - key: FRONTEND_URL
+        sync: false       # Ej: https://TU-USER.github.io/mini-inventario
+      - key: PORT
+        value: "8080"
+
+databases:
+  - name: mini-inventario-db
+    plan: free
+    databaseName: inventario
+    user: inventario_user
