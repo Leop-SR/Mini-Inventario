@@ -1,6 +1,6 @@
 # 📦 MiniInventario
 
-Sistema de gestión de inventario con **Spring Boot** (backend en Render) y **Angular** (frontend en GitHub Pages).
+Sistema de gestión de inventario con **Spring Boot** (backend en Render) y **Angular** (frontend en Netlify).
 
 ---
 
@@ -100,14 +100,6 @@ Si tu repositorio se llama diferente a `mini-inventario`, actualiza también:
 
 ---
 
-### 5. Activar GitHub Pages
-
-1. En tu repo → **Settings → Pages**
-2. Source: **GitHub Actions**
-3. El workflow `.github/workflows/deploy-frontend.yml` se ejecuta en cada push a `main`
-4. Tu app quedará en: `https://TU-USUARIO.github.io/mini-inventario/`
-
----
 
 ## 💻 Desarrollo local
 
@@ -190,4 +182,4 @@ docker run -p 8080:8080 \
 
 - **Backend**: Java 17 · Spring Boot 3.2 · Spring Data JPA · PostgreSQL · Lombok
 - **Frontend**: Angular 17 · Standalone Components · HttpClient
-- **Deploy**: Render (Docker) · GitHub Pages · GitHub Actions
+- **Deploy**: Render (Docker) · Netlify
