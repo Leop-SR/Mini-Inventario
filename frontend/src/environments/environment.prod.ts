@@ -2,5 +2,5 @@
 export const environment = {
   production: true,
   // Reemplaza con la URL real de tu servicio en Render
-  apiUrl: 'https://TU-APP.onrender.com/api'
+  apiUrl: 'https://mini-inventario-api-njng.onrender.com'
 };
