@@ -1,21 +1,19 @@
 # =============================================
 # Stage 1: Build
 # =============================================
-FROM eclipse-temurin:17-jdk-alpine AS build
+FROM maven:3.9-eclipse-temurin-17-alpine AS build
 
 WORKDIR /app
 
-# Copy Maven wrapper and pom first (for layer caching)
+# Copy pom first (for layer caching)
 COPY pom.xml .
-COPY mvnw .
-COPY .mvn .mvn
 
 # Download dependencies (cached layer)
-RUN ./mvnw dependency:go-offline -B
+RUN mvn dependency:go-offline -B
 
 # Copy source and build
 COPY src ./src
-RUN ./mvnw clean package -DskipTests -B
+RUN mvn clean package -DskipTests -B
 
 # =============================================
 # Stage 2: Runtime (slim image)
